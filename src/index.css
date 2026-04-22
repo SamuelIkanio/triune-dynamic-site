@@ -25,10 +25,12 @@ body {
   color: #F5F5F5;
 }
 
+/* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--color-triune-dark); }
 ::-webkit-scrollbar-thumb { background: var(--color-triune-blue); border-radius: 3px; }
 
+/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-20px); }
@@ -81,6 +83,7 @@ body {
 .delay-500 { animation-delay: 0.5s; }
 .delay-600 { animation-delay: 0.6s; }
 
+/* Glass morphism utility */
 .glass {
   background: rgba(255,255,255,0.03);
   backdrop-filter: blur(12px);
@@ -93,6 +96,7 @@ body {
   border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Gradient text */
 .gradient-text {
   background: linear-gradient(135deg, #187bcd, #00d4ff, #00e68a);
   -webkit-background-clip: text;
@@ -100,6 +104,7 @@ body {
   background-clip: text;
 }
 
+/* Grid pattern overlay */
 .grid-pattern {
   background-image:
     linear-gradient(rgba(24,123,205,0.03) 1px, transparent 1px),
