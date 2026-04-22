@@ -4,7 +4,7 @@ import SectionHeading from './SectionHeading'
 const stats = [
   { value: '3', label: 'Core Sectors', suffix: '' },
   { value: '100', label: 'AI-Driven', suffix: '%' },
-  { value: '∞', label: 'Scalability', suffix: '' },
+  { value: '\u221e', label: 'Scalability', suffix: '' },
   { value: '24/7', label: 'Resilient Ops', suffix: '' },
 ]
 
@@ -32,7 +32,6 @@ export default function Mission() {
           </p>
         </div>
 
-        {/* Stats grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {stats.map((stat, i) => (
             <div
