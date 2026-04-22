@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="fav-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#187bcd"/>
+      <stop offset="50%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#00e68a"/>
+    </linearGradient>
+    <filter id="fav-glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="512" height="512" rx="112" fill="#060d18"/>
+
+  <!-- Subtle background ring -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#187bcd" stroke-opacity="0.1" stroke-width="2"/>
+
+  <!-- Triangular T mark -->
+  <g filter="url(#fav-glow)">
+    <!-- Outer triangle frame -->
+    <path d="M256 100L390 344H160"
+          fill="none"
+          stroke="url(#fav-grad)"
+          stroke-width="10"
+          stroke-linejoin="round"
+          stroke-linecap="round"/>
+
+    <!-- Top horizontal bar of T -->
+    <rect x="184" y="178" width="144" height="20" rx="4"
+          fill="url(#fav-grad)"/>
+
+    <!-- Vertical stem of T -->
+    <rect x="246" y="178" width="20" height="125" rx="4"
+          fill="url(#fav-grad)"/>
+
+    <!-- Three small node dots at triangle vertices -->
+    <circle cx="256" cy="96" r="8" fill="#00d4ff"/>
+    <circle cx="394" cy="348" r="8" fill="#00e68a"/>
+    <circle cx="156" cy="348" r="8" fill="#187bcd"/>
+  </g>
+
+  <!-- Bottom text -->
+  <text x="256" y="414" text-anchor="middle"
+        font-family="'Montserrat', Arial" font-size="42" font-weight="800"
+        letter-spacing="8" fill="white" fill-opacity="0.9">
+    TRIUNE
+  </text>
+</svg>
