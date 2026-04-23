@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { useInView } from '../App'
 
 const PRODUCT_IMAGES = {
-  bloodreader: '/images/bloodreader-pro-branded.png',
-  sentinel: '/images/securescan-sentinel-branded.png',
-  neurosentry: '/images/mindguard-neurosentry-branded.png',
-  aicore: '/images/aicore.png',
+  bloodreader: '/images/bloodreader.jpg',
+  sentinel: '/images/sentinel.jpg',
+  neurosentry: '/images/neurosentry.jpg',
+  aicore: '/images/aicore.jpg',
 }
 
 const products = [
@@ -283,11 +283,7 @@ function ProductDeepDive({ product, index }) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
-                  activeTab === tab.id
-                    ? 'bg-triune-blue text-white shadow-lg shadow-triune-blue/30'
-                    : 'text-gray-400 hover:text-white hover:bg-white/5'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-point ${activeTab === tab.id ? 'bg-triune-blue text-white shadow-lg shadow-triune-blue/30' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
               >
                 {tab.label}
               </button>
