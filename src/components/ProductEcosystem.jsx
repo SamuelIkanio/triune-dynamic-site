@@ -382,6 +382,7 @@ export default function ProductEcosystem() {
             <div className="absolute inset-0 bg-gradient-to-t from-triune-dark/30 via-transparent to-transparent pointer-events-none" />
           </div>
         </div>
+        <img src="/images/comparison-scanner.jpeg" alt="The Triune Difference" className="w-full h-auto" />
       </div>
     </section>
   )
