@@ -3,7 +3,7 @@ import { useInView } from '../App'
 
 const PRODUCT_IMAGES = {
   bloodreader: '/images/bloodreader.PNG',
-  sentinel: '/images/sentinel.jpg',
+  sentinel: '/images/sentinel.PNG',
   neurosentry: '/images/neurosentry.jpg',
   aicore: '/images/aicore.jpg',
 }
