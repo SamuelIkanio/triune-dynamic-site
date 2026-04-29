@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { useInView } from '../App'
 
 const PRODUCT_IMAGES = {
-  bloodreader: '/images/bloodreader.jpg',
-  sentinel: '/images/sentinel.jpg',
-  neurosentry: '/images/neurosentry.jpg',
+  bloodreader: '/images/bloodreader.PNG',
+  sentinel: '/images/sentinel.PNG',
+  neurosentry: '/images/neurosentry.PNG',
   aicore: '/images/aicore.jpg',
 }
 
