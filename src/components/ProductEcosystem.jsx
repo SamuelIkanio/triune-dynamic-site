@@ -5,7 +5,7 @@ const PRODUCT_IMAGES = {
   bloodreader: '/images/bloodreader.PNG',
   sentinel: '/images/sentinel.PNG',
   neurosentry: '/images/neurosentry.PNG',
-  aicore: '/images/aicore.jpg',
+  aicore: '/images/aicore.png',
 }
 
 const products = [
