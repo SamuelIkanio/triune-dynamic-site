@@ -4,10 +4,14 @@ import { supabase } from "../lib/supabaseClient";
 export default function WaitList() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [loading, setLoading] = useState(false);
-
+  const [loading, setLoading] = useState("");
+const [website, setWebsite] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (website) {
+  setMessage("Something went wrong ❌");
+  return;
+}
     setLoading(true);
     setMessage("");
 
@@ -92,15 +96,19 @@ setTimeout(() => {
           Be first to receive updates on Triune Dynamic’s intelligent product ecosystem.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "12px",
-            flexWrap: "wrap",
-          }}
-        >
+        <form onSubmit={handleSubmit} >
+  <input
+    type="text"
+    value={website}
+    onChange={(e) => setWebsite(e.target.value)}
+    tabIndex="-1"
+    autoComplete="off"
+    style={{
+      position: "absolute",
+      left: "-9999px",
+      opacity: 0,
+    }}
+  />
           <input
             type="email"
             placeholder="Enter your email"
