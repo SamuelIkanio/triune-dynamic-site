@@ -1,69 +1,48 @@
-return (
-  <section style={{
-    padding: "120px 20px",
-    textAlign: "center",
-    background: "transparent",
-    color: "white"
-  }}>
-    
-    <h2 style={{
-      fontSize: "3rem",
-      fontWeight: "700",
-      marginBottom: "10px",
-      background: "linear-gradient(90deg, #00c2ff, #7a5cff)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent"
-    }}>
-      Join the Future
-    </h2>
+import { useState } from "react";
+import { supabase } from "../lib/supabaseClient";
 
-    <p style={{
-      color: "#aaa",
-      fontSize: "1.2rem",
-      marginBottom: "40px"
-    }}>
-      Get early access to Triune’s AI ecosystem
-    </p>
+export default function WaitList() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-    <form onSubmit={handleSubmit} style={{
-      display: "flex",
-      justifyContent: "center",
-      gap: "15px",
-      flexWrap: "wrap"
-    }}>
-      
-      <input
-        type="email"
-        placeholder="Enter your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-        style={{
-          padding: "16px",
-          width: "320px",
-          borderRadius: "10px",
-          border: "1px solid rgba(255,255,255,0.1)",
-          background: "rgba(255,255,255,0.05)",
-          color: "white",
-          outline: "none",
-          backdropFilter: "blur(10px)"
-        }}
-      />
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      <button type="submit" style={{
-        padding: "16px 30px",
-        background: "linear-gradient(90deg, #00c2ff, #7a5cff)",
-        border: "none",
-        borderRadius: "10px",
-        color: "white",
-        fontWeight: "bold",
-        cursor: "pointer",
-        boxShadow: "0 0 15px rgba(0,194,255,0.5)"
-      }}>
-        Join Waitlist
-      </button>
+    const { error } = await supabase
+      .from("waitlist")
+      .insert([{ email }]);
 
-    </form>
+    if (error) {
+      setMessage("Something went wrong ❌");
+      console.error(error);
+    } else {
+      setMessage("You're on the list 🚀");
+      setEmail("");
+    }
+  };
 
-  </section>
-);
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>Join Our Waitlist</h2>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          style={{
+            padding: "10px",
+            width: "250px",
+            marginRight: "10px"
+          }}
+        />
+
+        <button type="submit">Join</button>
+      </form>
+
+      {message && <p>{message}</p>}
+    </div>
+  );
+}
