@@ -5,6 +5,7 @@ import Vision from './components/Vision'
 import Mission from './components/Mission'
 import Values from './components/Values'
 import Products from './components/Products'
+import Waitlist from './components/WaitList'
 import ProductEcosystem from './components/ProductEcosystem'
 import TechBlueprint from './components/TechBlueprint'
 import StrategicMoats from './components/StrategicMoats'
@@ -45,6 +46,7 @@ function App() {
         <Mission />
         <Values />
         <Products />
+        <Waitlist />
         <ProductEcosystem />
         <TechBlueprint />
         <StrategicMoats />
