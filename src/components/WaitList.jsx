@@ -15,13 +15,14 @@ export default function WaitList() {
       .from("waitlist")
       .insert([{ email }]);
 
-    if (error) {
-      if (error.code === "23505") {
-        setMessage("you're already on the list");
-      } else 
-      setMessage("Something went wrong");
-      console.error(error);
-    } else {
+   if (error) {
+  if (error.code === "23505") {
+    setMessage("You're already on the list ✅");
+  } else {
+    setMessage("Something went wrong ❌");
+  }
+  console.error(error);
+} else {
       setMessage("You're on the list 🚀");
       setEmail("");
 
