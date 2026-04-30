@@ -16,6 +16,9 @@ export default function WaitList() {
       .insert([{ email }]);
 
     if (error) {
+      if (error.code === "23505") {
+        setMessage("you're already on the list");
+      } else 
       setMessage("Something went wrong");
       console.error(error);
     } else {
