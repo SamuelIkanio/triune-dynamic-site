@@ -29,12 +29,10 @@ export default function WaitList() {
 } else {
       setMessage("You're on the list 🚀");
       setEmail("");
-
-      setTimeout(() => {
+    }
+setTimeout(() => {
         setMessage("");
       }, 3000);
-    }
-
     setLoading(false);
   };
 
