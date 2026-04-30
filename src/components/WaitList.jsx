@@ -121,35 +121,40 @@ setTimeout(() => {
           />
 
           <button
-            type="submit"
-            disabled={loading}
-            style={{
-              padding: "15px 26px",
-              borderRadius: "14px",
-              border: "none",
-              background: "linear-gradient(90deg, #00c2ff, #5fffb1)",
-              color: "#06111f",
-              fontWeight: 800,
-              fontFamily: "inherit",
-              cursor: loading ? "not-allowed" : "pointer",
-              opacity: loading ? 0.7 : 1,
-            }}
-          >
-            {loading ? "Joining..." : "Join"}
-          </button>
+  type="submit"
+  disabled={loading}
+  style={{
+    padding: "15px 32px",
+    borderRadius: "14px",
+    border: "none",
+    background: "linear-gradient(90deg, #00c2ff, #5fffb1)",
+    color: "#06111f",
+    fontWeight: 800,
+    fontFamily: "inherit",
+    cursor: loading ? "not-allowed" : "pointer",
+    opacity: loading ? 0.7 : 1,
+    transition: "all 0.25s ease",
+    boxShadow: "0 0 22px rgba(0, 220, 255, 0.25)",
+    position: "relative",
+    zIndex: 10,
+  }}
+>
+  {loading ? "Joining..." : "Join"}
+</button>
         </form>
 
         {message && (
-          <p
-            style={{
-              marginTop: "18px",
-              color: message.includes("wrong") ? "#ff6b6b" : "#5fffb1",
-              fontWeight: 700,
-            }}
-          >
-            {message}
-          </p>
-        )}
+  <p
+    style={{
+      marginTop: "18px",
+      color: message.includes("wrong") ? "#ff6b6b" : "#5fffb1",
+      fontWeight: 800,
+      transition: "all 0.3s ease",
+    }}
+  >
+    {message}
+  </p>
+)}
       </div>
     </section>
   );
